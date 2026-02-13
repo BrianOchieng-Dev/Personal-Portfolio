@@ -66,9 +66,27 @@
     </section>
 </section>
 <script scr="script.js">
-   export default{
-    darkMode: "class",
-   }
+  
+    darkMode: "class"
+
+
+   const toggle = () => {
+    document.documentElement.classList.toggle('dark')
+  }
+
+  const savedTheme = localStorage.getItem("theme")
+
+if (savedTheme === "dark") {
+  document.documentElement.classList.add("dark")
+}
+
+function toggleTheme() {
+  document.documentElement.classList.toggle("dark")
+
+  const isDark = document.documentElement.classList.contains("dark")
+  localStorage.setItem("theme", isDark ? "dark" : "light")
+}
+
 </script>
 </body>
 
